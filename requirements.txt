@@ -1,0 +1,17 @@
+REQUIREMENTS
+
+paup4a168
+https://phylosolutions.com/paup-test/
+As of 10/17/2024 PAUP has not been compiled for ARM processors
+If using AWS, you must choose an x86 environment
+	wget the right version of PAUP
+	gunzip PAUP
+	chmod +x PAUP
+This worked fine on AWS ubuntu after figuring how to install PAUPs dependencies. 
+	wget http://mirrors.kernel.org/ubuntu/pool/universe/g/gcc-7/libgfortran4_7.5.0-3ubuntu1~18.04_amd64.deb
+	sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+	sudo apt update
+	sudo apt install gfortran-7 gcc-7
+	ls /usr/lib/gcc/x86_64-linux-gnu/7/libgfortran.so.4 
+	sudo apt install python2.7 python2.7-dev
+
