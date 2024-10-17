@@ -13,8 +13,11 @@ partitions into individual genes. In order to keep the size of the simulations
 manageable, it uses the first 100 genes representing the first 240668 amino
 acids. However, one could use all of them with two adjustments.
 In def get_ungapped_sequence() you'll have to comment out this line
+
 aligned_sequence = aligned_sequence[:240668]
+
 And then under # parse the partitions:
+
 change to file_path = 'melanogaster_partitions_all.txt'
 
 ### The simulated tree is:
@@ -45,9 +48,11 @@ many simulations you'd like to create and it will create them serially.
 Alternatively you can run bigboy_simulation.py with an argument and nest it in a 
 loop to create a certian number each with a numerical index. This allows their
 creation in parallel in the background...
+```
 for i in ${0..32}; do
     nohup bigboy_simulation.py $i &
     done; wait
+```
 
 ### Results of simulation
 
@@ -60,8 +65,11 @@ OGs is accoplished by delete/restore commands in PAUP.
 ### Execution in PAUP
 
 You're on your own re PAUP execution. For example 
+
 ./paup4a169_ubuntu64 bigboy_sims_0.nex
+
 nohup ./paup4a169_ubuntu64 bigboy_sims_0.nex &
+
 The latter is recommended as it will take a while (~25 hr)
 On AWS I'd recommend creating an AMI for PAUP, and then spin up as many
 instances as you like (or are allowed) to run in parallel. 
@@ -111,8 +119,11 @@ OG2     0001
 End;
 ```
 If the line with 'node' is 0011 the tree is True
+
 If the line with 'node' is 0110 the tree is Hybrid
+
 If the line with 'node' is 0101 the tree is Wrong
+
 If there is no line with 'node' the tree is Star
 
 ### Parsing MRP output from PAUP
