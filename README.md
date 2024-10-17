@@ -117,17 +117,22 @@ If there is no line with 'node' the tree is Star
 
 ### Parsing MRP output from PAUP
 Because the order of the MRPs is tied to the order of the simulations as such:
+```
 for mu in mu_values = [0.0001, 0.00025, 0.0005, 0.001, 0.0015, 0.002]
  for mya in mya_values = [2.5 * i for i in range(1, 11)]
    for depth in depth_values = [0.25, 0.5, 0.75]
     for proportion in introgression_proportions = [0, 0.01, 0.031, 0.0625, 0.125, 0.25]
      for partition in paritions 1 through 100
       for og in ogs = [2, 5, 10, 25, 50, 75, 100, 125, 150, 175, 200]
+```
 the MRP output has to be faithful to that order
+
 parse_mrps.py does this taking one simdump_<index>.mrp file as an argument. 
 the output from simdump_<index>.mrp will be two files:
+
 simdump_0.out contains all of the results for all partitions
 simdump_0_summary.csv converts the results to have a count of number of partitions scoring
+
 each of True, Hybrid, Wrong, and Star. 
 
 
